@@ -119,6 +119,10 @@ class Cortex:
         self.running = False
         self.listen_ws = self.start_listening()
 
+    @staticmethod
+    def test_emotiv():
+        print('this is from the plugin')
+
     def send_command(self, method, auth=True, **kwargs):
         self.send_wait_command(method, auth, wait=False, **kwargs)
 

@@ -16,14 +16,20 @@ name = "psychopy-emotiv"
 # can be single strings, or lists of strings specifying what attributes of those
 # PsychoPy objects are to reference objects defined in the plugin module.
 entry_points = {
-    'psychopy.hardware.emotiv': ['emotiv = psychopy_emotive:emotiv']}
+    'psychopy.hardware': ['emotiv = psychopy_emotiv:emotiv'],
+    'psychopy.experiment.components': [
+        'emotiv_marking = psychopy_emotiv:emotiv_marking',
+        'emotiv_record = psychopy_emotiv:emotiv_record'
+    ]}
 
 # Run the setup function.
 setup(
     name=name,  # set the name
     version="0.1",  # put your plugin version here
-    packages=['psychopy_emotiv'],
-    package_data={"": ["*.txt", "*.md"]},
+    packages=['psychopy_emotiv',
+              'psychopy_emotiv.emotiv_marking',
+              'psychopy_emotiv.emotiv_record'],
+    package_data={"": ["*.txt", "*.md", "*.png"]},
     author="Matthew D. Cutone",
     author_email="mcutone@opensciencetools.org",
     description="PsychoPy plugin for adding support for Emotiv devices.",
@@ -32,5 +38,6 @@ setup(
         "License :: OSI Approved :: GPL3",
         'Programming Language :: Python :: 3'],
     keywords="psychopy emotiv eeg eyetracker",
+    zip_safe=False,
     entry_points=entry_points  # set our entry points in the package metadata
 )
