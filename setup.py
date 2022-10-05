@@ -9,6 +9,31 @@ from setuptools import setup
 # import collisions with other packages, here we call it `psychopy_emotiv`.
 name = "psychopy-emotiv"
 
+# Define packages to be included with this plugin.
+packages = [
+    'psychopy_emotiv',
+    'psychopy_emotiv.emotiv_marking',
+    'psychopy_emotiv.emotiv_record'
+]
+
+# Define package directories.
+package_dir = {
+    'psychopy_emotiv': 'psychopy_emotiv',
+    'psychopy_emotiv.emotiv_marking': 'psychopy_emotiv/emotiv_marking',
+    'psychopy_emotiv.emotiv_record': 'psychopy_emotiv/emotiv_record'
+}
+
+# Define package data. This is required for including icons or any other
+# non-Python resource (e.g. documentation, images, videos, etc.) needed by the
+# plugin.
+package_data = {
+   "": ["*.txt", "*.md"],
+   'psychopy_emotiv.emotiv_marking':
+       ['dark/*.png', 'light/*.png', 'classic/*.png'],
+   'psychopy_emotiv.emotiv_record':
+       ['dark/*.png', 'light/*.png', 'classic/*.png']
+}
+
 # Define entry points. PsychoPy's plugin framework scans packages and looks for
 # entry points advertised in the package metadata which pertains to PsychoPy.
 # Entry points are a dictionary, where keys are fully qualified names to
@@ -26,10 +51,9 @@ entry_points = {
 setup(
     name=name,  # set the name
     version="0.1",  # put your plugin version here
-    packages=['psychopy_emotiv',
-              'psychopy_emotiv.emotiv_marking',
-              'psychopy_emotiv.emotiv_record'],
-    package_data={"": ["*.txt", "*.md", "*.png"]},
+    packages=packages,
+    package_dir=package_dir,
+    package_data=package_data,
     author="Matthew D. Cutone",
     author_email="mcutone@opensciencetools.org",
     description="PsychoPy plugin for adding support for Emotiv devices.",
