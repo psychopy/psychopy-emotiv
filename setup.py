@@ -9,6 +9,10 @@ from setuptools import setup
 # import collisions with other packages, here we call it `psychopy_emotiv`.
 name = "psychopy-emotiv"
 
+# Version for the package. Use setuptools conventions for specifying the version
+# string.
+version = "0.1"
+
 # Define packages to be included with this plugin.
 packages = [
     'psychopy_emotiv',
@@ -50,7 +54,7 @@ entry_points = {
 # Run the setup function.
 setup(
     name=name,  # set the name
-    version="0.1",  # put your plugin version here
+    version=version,  # put your plugin version here
     packages=packages,
     package_dir=package_dir,
     package_data=package_data,
