@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=40.8.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "psychopy-emotiv"
+version = "0.0.1"
+description = "Extension package for PsychoPy which adds support for various hardware devices by Emotiv."
+readme = "README.md"
+requires-python = ">= 3.7"
+license.file = "LICENSE"
+authors = [
+  { name = "Jon Peirce", email = "jon@opensceincetools.org" },
+  { name = "Matthew Cutone", email = "mcutone@opensceincetools.org" },
+]
+classifiers = [
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.7",
+  "Programming Language :: Python :: 3.8",
+  "Programming Language :: Python :: 3.9",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: Implementation :: CPython",
+]
+urls.homepage = "https://github.com/mdcutone/psychopy-emotiv"
+urls.changelog = "https://github.com/mdcutone/psychopy-emotiv/blob/main/CHANGELOG.txt"
+dependencies = [
+  "pyserial",
+  "numpy",
+  "pandas"
+]
+
+[project.entry-points."psychopy.hardware"]
+emotiv = "psychopy_emotiv:emotiv"
+
+[project.entry-points."psychopy.experiment.components"]
+emotiv_marking = "psychopy_emotiv:emotiv_marking"
+emotiv_record = "psychopy_emotiv:emotiv_record"
