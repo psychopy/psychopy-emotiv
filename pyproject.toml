@@ -32,6 +32,12 @@ dependencies = [
   "pandas"
 ]
 
+[tool.setuptools.packages.find]
+where = ["",]
+
+[tool.setuptools.package-data]
+"*" = ["*.png"]
+
 [project.entry-points."psychopy.hardware"]
 emotiv = "psychopy_emotiv:emotiv"
 

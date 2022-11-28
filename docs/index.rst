@@ -6,7 +6,7 @@
 Welcome to psychopy-emotiv's documentation!
 ===========================================
 
-The psychopy-emotiv plugin is designed to make it really easy to get Emotiv 
+The `psychopy-emotiv` plugin is designed to make it really easy to get Emotiv
 EEG recordings working with minimal effort in your PsychoPy experiments.
 
 You can use it from the graphical Builder interface using the Builder Components
