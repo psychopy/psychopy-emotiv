@@ -38,9 +38,6 @@ where = ["",]
 [tool.setuptools.package-data]
 "*" = ["*.png"]
 
-[project.entry-points."psychopy.hardware"]
-emotiv = "psychopy_emotiv:emotiv"
-
 [project.entry-points."psychopy.experiment.components"]
 emotiv_marking = "psychopy_emotiv:emotiv_marking"
 emotiv_record = "psychopy_emotiv:emotiv_record"
