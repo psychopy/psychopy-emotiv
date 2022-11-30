@@ -8,7 +8,7 @@ version = "0.0.1"
 description = "Extension package for PsychoPy which adds support for various hardware devices by Emotiv."
 readme = "README.md"
 requires-python = ">= 3.7"
-license.file = "LICENSE"
+license = { text = "GNU General Public License v3 (GPLv3)" }
 authors = [
   { name = "Jon Peirce", email = "jon@opensceincetools.org" },
   { name = "Matthew Cutone", email = "mcutone@opensceincetools.org" },
@@ -29,14 +29,14 @@ urls.changelog = "https://github.com/mdcutone/psychopy-emotiv/blob/main/CHANGELO
 dependencies = [
   "pyserial",
   "numpy",
-  "pandas"
+  "pandas",
 ]
 
 [tool.setuptools.packages.find]
 where = ["",]
 
 [tool.setuptools.package-data]
-"*" = ["*.png"]
+"*" = ["*.png",]
 
 [project.entry-points."psychopy.experiment.components"]
 emotiv_marking = "psychopy_emotiv:emotiv_marking"
