@@ -103,10 +103,13 @@ class Cortex:
                                 headset_id=self.headsets[0])
 
             self.tt0 = self.synchronise()
-            self.create_record(title=f"Psychopy_{subject}_{time_str}".replace(":",""))
+            self.create_record(
+                title=f"Psychopy_{subject}_{time_str}".replace(":",""))
         else:
             logger.error("Not able to find a connected headset")
-            raise CortexNoHeadsetException("No headset detected. Please connect the EMOTIV headset in Emotiv Launcher")
+            raise CortexNoHeadsetException(
+                "No headset detected. Please connect the EMOTIV headset in "
+                "Emotiv Launcher")
         # EEG data
         if EEG_ON:
             self.timestamps = []
@@ -197,7 +200,8 @@ class Cortex:
                         self.timestamps.append(result['time'])
                         row = result['eeg']
                         if row[self.marker_idx]:
-                            self.marker_buffer.append(row[self.marker_idx][0]['value'])
+                            self.marker_buffer.append(
+                                row[self.marker_idx][0]['value'])
                         if self.marker_buffer:
                             row.append(self.marker_buffer.pop(0))
                         else:
@@ -212,7 +216,9 @@ class Cortex:
         if EEG_ON:
             df = pd.DataFrame(self.data, columns=self.columns)
             df.insert(0, 'timestamp', self.timestamps)
-            df.to_csv(f"eeg_data_{self.timestamps[0]}.csv.gz", compression='gzip', index=False)
+            df.to_csv(
+                f"eeg_data_{self.timestamps[0]}.csv.gz",
+                compression='gzip', index=False)
         logger.debug("Finished listening")
 
     def to_epoch(self, t=None, delta_time=0):
@@ -347,7 +353,10 @@ class Cortex:
             code = json.loads(str(e))['error']['code']
             msg = json.loads(str(e))['error']['message']
             if code == -32002:
-                raise CortexApiException("Invalid license key. Please create a new applicationId and do NOT check 'My App requires EEG access' or request API EEG access from Emotiv customer support.")
+                raise CortexApiException(
+                    "Invalid license key. Please create a new applicationId "
+                    "and do NOT check 'My App requires EEG access' or request "
+                    "API EEG access from Emotiv customer support.")
             else:
                 raise CortexApiException(msg)
         logger.debug(f"{__name__} resp:\n{resp}")
