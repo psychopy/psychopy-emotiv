@@ -39,5 +39,5 @@ where = ["",]
 "*" = ["*.png",]
 
 [project.entry-points."psychopy.experiment.components"]
-emotiv_marking = "psychopy_emotiv:emotiv_marking"
-emotiv_record = "psychopy_emotiv:emotiv_record"
+EmotivMarkingComponent = "psychopy_emotiv:EmotivMarkingComponent"
+EmotivRecordingComponent = "psychopy_emotiv:EmotivRecordingComponent"
