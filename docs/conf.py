@@ -20,6 +20,7 @@
 project = 'psychopy-emotiv'
 copyright = '2022, Bill King'
 author = 'Bill King'
+repo = 'https://github.com/psychopy/psychopy-emotiv'
 
 
 # -- General configuration ---------------------------------------------------
@@ -46,9 +47,16 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-# html_theme_path = ["themes"]
+html_theme_path = ["themes"]
 # html_theme = 'psychopy_bootstrap'
-html_theme = 'furo'
+html_theme = 'psychopy_plugin'
+
+# HTML tab title
+html_title = 'Psychopy Plugin Documentation'
+html_favicon = 'favicon.png'
+
+# Variables for use in HTML
+html_context = {'repo': repo}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
