@@ -28,6 +28,7 @@ class EmotivMarkingComponent(BaseComponent):  # or (VisualComponent)
     targets = ['PsychoPy', 'PsychoJS']
     iconFile = Path(__file__).parent / 'emotiv_marking.png'
     tooltip = _translate('Mark a period of EEG')
+    plugin = "psychopy-emotiv"
 
     def __init__(self, exp, parentName, name='eeg_marker',
                  startType='time (s)', startVal=0.0,

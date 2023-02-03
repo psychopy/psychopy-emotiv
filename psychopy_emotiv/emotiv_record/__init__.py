@@ -24,6 +24,7 @@ class EmotivRecordingComponent(BaseComponent):  # or (VisualComponent)
     targets = ['PsychoPy', 'PsychoJS']
     iconFile = Path(__file__).parent / 'emotiv_record.png'
     tooltip = _translate('Initialize EMOTIV hardware connection')
+    plugin = "psychopy-emotiv"
 
     def __init__(self, exp, parentName, name='cortex_rec'):
         super(EmotivRecordingComponent, self).__init__(
