@@ -1,0 +1,3 @@
+0.0.3:
+
+- added the plugin attribute to the Component to identify where this component lives
