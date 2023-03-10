@@ -28,8 +28,7 @@ urls.homepage = "https://github.com/mdcutone/psychopy-emotiv"
 urls.changelog = "https://github.com/mdcutone/psychopy-emotiv/blob/main/CHANGELOG.txt"
 dependencies = [
   "pyserial",
-  "numpy",
-  "pandas",
+  "websocket",
 ]
 
 [tool.setuptools.packages.find]
