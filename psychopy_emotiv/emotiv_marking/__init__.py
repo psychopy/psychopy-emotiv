@@ -9,17 +9,17 @@ __all__ = ['EmotivMarkingComponent']
 
 import json
 from pathlib import Path
-from psychopy.experiment.components import (BaseComponent, Param, getInitVals,
-                                            _translate)
+from psychopy.experiment.components import BaseComponent, Param, getInitVals
+                                    
 # overwrite (filemode='w') a detailed log of the last run in this dir
 # lastLog = logging.LogFile("lastRun.log", level=logging.DEBUG, filemode='w')
 from ..emotiv_record import CORTEX_OBJ
-from psychopy.localization import _localized as __localized
-_localized = __localized.copy()
+# from psychopy.localization import _localized as __localized
+_localized = {}
 
-_localized.update({'emotiv_marker_label': _translate('Marker Label'),
-                   'emotiv_marker_value': _translate('Marker Value'),
-                   'emotiv_stop_marker': _translate('Stop Marker')})
+_localized.update({'emotiv_marker_label': 'Marker Label',
+                   'emotiv_marker_value': 'Marker Value',
+                   'emotiv_stop_marker': 'Stop Marker'})
 
 
 class EmotivMarkingComponent(BaseComponent):  # or (VisualComponent)
@@ -27,7 +27,7 @@ class EmotivMarkingComponent(BaseComponent):  # or (VisualComponent)
     categories = ['EEG']
     targets = ['PsychoPy', 'PsychoJS']
     iconFile = Path(__file__).parent / 'emotiv_marking.png'
-    tooltip = _translate('Mark a period of EEG')
+    tooltip = 'Mark a period of EEG'
     plugin = "psychopy-emotiv"
 
     def __init__(self, exp, parentName, name='eeg_marker',
@@ -44,23 +44,21 @@ class EmotivMarkingComponent(BaseComponent):  # or (VisualComponent)
 
         # params
         _allow2 = ['constant', 'set every repeat']  # list
-        msg = _translate(
-            "Label of the marker to be inserted (interpreted as a string)")
+        msg = "Label of the marker to be inserted (interpreted as a string)"
         self.params['emotiv_marker_label'] = Param(
             emotiv_marker_label, valType='str', inputType="single", categ='Basic',
             updates='constant', allowedUpdates=_allow2[:],
             hint=msg,
             label=_localized['emotiv_marker_label'])
 
-        msg = _translate(
-            "Value of the marker to be inserted (interpreted as a string)")
+        msg = "Value of the marker to be inserted (interpreted as a string)"
         self.params['emotiv_marker_value'] = Param(
             emotiv_marker_value, valType='str', inputType="single", categ='Basic',
             updates='constant', allowedUpdates=_allow2[:],
             hint=msg,
             label=_localized['emotiv_marker_value'])
 
-        msg = _translate("Check this box to include a stop marker")
+        msg = "Check this box to include a stop marker"
         self.params['emotiv_stop_marker'] = Param(
             emotiv_stop_marker, valType='bool', inputType="bool", categ='Basic',
             allowedVals=[True, False],
