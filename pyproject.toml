@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "psychopy-emotiv"
-version = "0.0.3"
+version = "0.1.1"
 description = "Extension package for PsychoPy which adds support for various hardware devices by Emotiv."
 readme = "README.md"
 requires-python = ">= 3.7"
@@ -24,11 +24,11 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: Implementation :: CPython",
 ]
-urls.homepage = "https://github.com/mdcutone/psychopy-emotiv"
-urls.changelog = "https://github.com/mdcutone/psychopy-emotiv/blob/main/CHANGELOG.txt"
+urls.homepage = "https://github.com/psychopy/psychopy-emotiv"
+urls.changelog = "https://github.com/psychopy/psychopy-emotiv/blob/main/CHANGELOG.txt"
+urls.documentation = "https://pages.github.com/psychopy/psychopy-emotiv"
+urls.repository = "https://github.com/psychopy/psychopy-emotiv"
 dependencies = [
-  "pyserial",
-  "websocket",
 ]
 
 [tool.setuptools.packages.find]
