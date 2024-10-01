@@ -29,6 +29,7 @@ urls.changelog = "https://github.com/psychopy/psychopy-emotiv/blob/main/CHANGELO
 urls.documentation = "https://pages.github.com/psychopy/psychopy-emotiv"
 urls.repository = "https://github.com/psychopy/psychopy-emotiv"
 dependencies = [
+  "websocket-client"
 ]
 
 [tool.setuptools.packages.find]
