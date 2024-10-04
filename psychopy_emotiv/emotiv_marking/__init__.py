@@ -17,9 +17,9 @@ from ..emotiv_record import CORTEX_OBJ
 # from psychopy.localization import _localized as __localized
 _localized = {}
 
-_localized.update({'emotiv_marker_label': 'Marker Label',
-                   'emotiv_marker_value': 'Marker Value',
-                   'emotiv_stop_marker': 'Stop Marker'})
+_localized.update({'emotiv_marker_label': 'Marker label',
+                   'emotiv_marker_value': 'Marker value',
+                   'emotiv_stop_marker': 'Stop marker'})
 
 
 class EmotivMarkingComponent(BaseComponent):  # or (VisualComponent)
